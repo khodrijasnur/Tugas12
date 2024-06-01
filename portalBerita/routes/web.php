@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CastController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,10 +22,14 @@ Route::get('/daftar', [AuthController::class, 'daftar']);
 
 Route::post('/home', [AuthController::class, 'home']);
 
-Route::get('/data-table', function() {
+
+Route::get('/data-table', function(){
     return view('page.data-table');
 });
 
-Route::get('/table', function() {
+
+Route::get('/table', function(){
     return view('page.table');
 });
+
+Route::resource('cast',CastController::class);
